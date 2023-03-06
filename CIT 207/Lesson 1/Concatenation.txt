@@ -1,0 +1,16 @@
+import java.util.Scanner;
+public class Concatenation {
+    public static void main(String[] args){
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Please enter the 1st word: ");
+        String word1 = scanner.nextLine();
+
+        System.out.print("Please enter the 2nd word: ");
+        String word2 = scanner.nextLine();
+        
+        String combinedWord = word1 +" " +word2;
+        System.out.println(combinedWord);
+        scanner.close();
+
+    }
+}

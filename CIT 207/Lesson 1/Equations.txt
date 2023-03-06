@@ -1,0 +1,38 @@
+public class Equation1 {
+    public static void main(String[] args){
+       	int answer = 4 * (1-13+15-17+19-111);
+       	System.out.print("4×(1−13+15−17+19−111) = " + answer);
+    }
+}
+
+/*
+public class Equation2 {
+    public static void main(String[] args){
+       	double answer= 9.5 * 4.5 - 2.5 * 345.5 - 3.5;
+        	System.out.print("9.5 × 4.5 − 2.5 × 345.5 − 3.5 = " + answer);
+
+    }
+}
+
+*/
+
+
+/*
+import java.util.Scanner;
+public class AreaRectangle {
+    public static void main(String[] args){
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Please enter the value of width: ");
+        double width = scanner.nextDouble();
+
+        System.out.print("Please enter the value of height: ");
+        double height = scanner.nextDouble();
+
+        double area = width * height;  
+        System.out.println("Area of rectangle = " + area);  
+        scanner.close();
+
+    }
+}
+*/
+

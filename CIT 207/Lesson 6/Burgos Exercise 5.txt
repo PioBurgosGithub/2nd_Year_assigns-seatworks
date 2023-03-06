@@ -1,0 +1,193 @@
+package Exercises;
+
+public class Exercise5 {
+    public static void main(String args[]) {
+        
+        PERSON person1 = new PERSON();
+        person1.setfullName("Tony", "Stark");
+        person1.setBirthYear(1970);
+        //person1.setOccupation("Billionare");
+        person1.printInfo();
+        // use objects from exercise 4.
+
+        PERSON person2 = new PERSON("Steve","Rogers", 1918);
+        
+        person2.setOccupation("Soldier");
+        person2.printInfo();
+        
+        STUDENT student1 = new STUDENT();
+        
+        String[] Stud_Class_Codes_1 = new String[]{"CIT 207: 6EOXUWVYX7","CCS 246 INTRO TO AI: RHYTO1B61I","HUM 110 ART APPRECIATION: OAGM0305OR",
+        "SS112 ETHICS: WUIW7UVE8C","CCS223 DISCRETE MATH :P4PV2Q7SOT"};
+        
+        student1 = new STUDENT("Pio","Burgos", 2001,"72183","2021", "BSCS2B", Stud_Class_Codes_1);
+        student1.setBirthYear(2001);
+        student1.printInfo();
+
+        STUDENT student2 = new STUDENT();
+        student2.printInfo();
+        
+
+    }
+
+}
+
+class PERSON{
+    
+    String studNum;
+    String fName;
+    String lName;
+    int birthYear;
+    String occupation;
+  
+    
+    public String getfullName(){
+        return this.fName + " " + this.lName;
+    }
+   
+    public int getBirthYear(){
+        return this.birthYear;
+    }
+    
+    public String getOccupation(){
+        return this.occupation;
+    }
+
+    public void setfullName(String fName, String lName){
+        this.fName = fName;
+        this.lName = lName;
+        System.out.println("\nName has been updated.");
+    }
+    
+    public void setBirthYear(int birthYear){
+        this.birthYear = birthYear;
+    }
+    
+    public void setOccupation(String occupation){
+        this.occupation = occupation;
+    }
+    
+//========================================================================================================
+    public void fullName(){
+        System.out.println("Full Name: " + getfullName());
+    }
+
+    public void personAge(){
+        System.out.print("Age: " );
+        System.out.println(2021 - getBirthYear());
+    }
+    
+    public void personOccupation(){
+         System.out.println("Occupation: " +  getOccupation());
+    }
+//========================================================================================================
+// constructors    
+    
+     public PERSON(){        
+       
+        this.fName = "John";
+        this.lName = "Doe";
+        this.birthYear = 1999;
+        this.occupation = "No Occupation";
+    }
+    
+    
+    public PERSON(String fName, String lName, int birthYear){    
+        
+        this.fName = fName;
+        this.lName = lName;
+        this.birthYear = birthYear;
+    }
+
+    public PERSON(String fName, String lName, int birthYear, String occupation){    
+        
+        this.fName = fName;
+        this.lName = lName;
+        this.birthYear = birthYear;
+        this.occupation = occupation;
+    }
+    
+    
+    public void printInfo(){
+        
+        fullName();
+        System.out.println("Year of Birth: " + this.birthYear);
+        personAge();
+        personOccupation();
+        System.out.println();
+    }
+}
+
+
+class STUDENT extends PERSON{
+    
+    
+    private String studNum;
+    private String classYear;
+    private String section;
+    private String[] classCodes;
+
+    
+
+    
+   
+// ========================================================================================================
+
+    public void printClassCodes(String[] classCodes){
+        System.out.println("Class Codes: ");
+        for(int i=0; i < classCodes.length; i++){
+            System.out.println(classCodes[i]);
+        }
+         System.out.println();
+    }
+    
+    public void printInfo(){
+       
+        super.printInfo();
+        System.out.println("\nStudent Number: " + this.studNum);
+        System.out.println("Class Year: " + this.classYear);
+        System.out.println("Class Section: " + this.section);
+        printClassCodes(classCodes);
+       
+    }
+//========================================================================================================
+// constructors
+
+    public STUDENT(){        
+        
+        super();
+        this.occupation = "Person is Student";
+        this.studNum = "4700712";
+        this.classYear = "2021";
+        this.section = "BSIT 3A";
+        this.classCodes = new String[]{"English: BKKT6B8TI4", "Science : BV8ZFD0NAF","Math: CC4ZGFZD01",
+        "History: YH12XI2ZJ2", "Robotics: I8FH7W0TN0"}; // dummy entries
+        
+        
+    }
+
+
+  /*  public STUDENT(String studNum, String classYear, String section, String[] classCodes){ 
+        this.occupation = "Person is Student";      
+        this.studNum = studNum;
+        this.classYear = classYear;
+        this.section = section;
+        this.classCodes = classCodes;
+       
+    }*/
+    
+    public STUDENT(String fName, String lName, int birthYear, String studNum, String classYear, String section, String[] classCodes){    
+       
+        super(fName, lName, birthYear);
+        this.occupation = "Person is Student";
+        this.studNum = studNum;
+        this.classYear = classYear;
+        this.section = section;
+        this.classCodes = classCodes;
+       
+    }
+
+}
+
+
+
